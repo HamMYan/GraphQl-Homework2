@@ -1,0 +1,72 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Group {
+  """Group id"""
+  id: ID!
+
+  """Group Name"""
+  name: String!
+
+  """Users Count"""
+  studentsCount: Float!
+}
+
+type Student {
+  """User id"""
+  id: ID!
+
+  """User Name"""
+  name: String!
+
+  """User Surname"""
+  surname: String!
+}
+
+type Query {
+  student: [Student!]!
+  studentById(id: Int!): Student!
+  group: [Group!]!
+  groupById(id: Int!): Group!
+}
+
+type Mutation {
+  createStudent(createStudentInput: CreateStudentInput!): Student!
+  updateStudent(updateStudentInput: UpdateStudentInput!): Student!
+  addGroup(id: Int!, groupId: Int!): Student!
+  removeStudent(id: Int!): Student!
+  createGroup(createGroupInput: CreateGroupInput!): Group!
+  updateGroup(updateGroupInput: CreateGroupInput!): Group!
+  removeGroup(id: Int!): Group!
+}
+
+input CreateStudentInput {
+  """User Name"""
+  name: String!
+
+  """User Surname"""
+  surname: String!
+}
+
+input UpdateStudentInput {
+  """User id"""
+  id: ID!
+
+  """User Name"""
+  name: String!
+
+  """User Surname"""
+  surname: String!
+}
+
+input CreateGroupInput {
+  """Group id"""
+  id: ID!
+
+  """Group Name"""
+  name: String!
+
+  """Students Count"""
+  studentCount: String!
+}
